@@ -1,7 +1,6 @@
 name: Deploy Next.js site to Pages
 
 on:
-  # Se ejecutará cada vez que hagas un push a la rama "main"
   push:
     branches: ["main"]
   workflow_dispatch:
@@ -36,6 +35,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
+          name: github-pages
           path: ./out
 
   deploy:
